@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c702ca89d98da5d4c8d892f5a4ac7191, type: 3}
+  m_Name: Tbar
+  m_EditorClassIdentifier: 
+  id: 2
+  buildYOffset: 0.5
+  radius: 1
+  strength: 0.8
+  width: 1
+  height: 1.5
+  depth: 0.5
+  buildPrefab: {fileID: 5859734125496590001, guid: e0651fcc3ff8a7b41b184ed122ce0bce, type: 3}
+  transparentPrefab: {fileID: 5509268238212679131, guid: 3de8793cc5f2778459c7d0fd1074552a, type: 3}

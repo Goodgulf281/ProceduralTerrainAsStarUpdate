@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c702ca89d98da5d4c8d892f5a4ac7191, type: 3}
+  m_Name: Block
+  m_EditorClassIdentifier: 
+  id: 1
+  buildYOffset: 0.25
+  radius: 0.5
+  strength: 1
+  width: 0.5
+  height: 0.5
+  depth: 0.5
+  snapPoints:
+  - {x: -0.25, y: -0.25, z: -0.25}
+  - {x: 0.5, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0.5}
+  - {x: -0.5, y: 0, z: 0}
+  - {x: 0, y: 0.5, z: 0}
+  - {x: 0, y: 0, z: -0.5}
+  - {x: 0.5, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0.5}
+  - {x: -0.25, y: -0.25, z: -0.25}
+  buildPrefab: {fileID: 5859734125496590001, guid: 3607ebf59eb233846902f56d87570e1c, type: 3}
+  transparentPrefab: {fileID: 5509268238212679131, guid: 49566f9b9476be1438564eaa0464a90b, type: 3}

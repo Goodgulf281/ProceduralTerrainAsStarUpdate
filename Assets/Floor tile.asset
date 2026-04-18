@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c702ca89d98da5d4c8d892f5a4ac7191, type: 3}
+  m_Name: Floor tile
+  m_EditorClassIdentifier: 
+  id: 0
+  buildYOffset: 0.1
+  radius: 0.8
+  strength: 0.5
+  width: 1
+  height: 0.2
+  depth: 1
+  buildPrefab: {fileID: 1005532211212882137, guid: a471156ade2ad9b4f999f786eafd7a59, type: 3}
+  transparentPrefab: {fileID: 2124936171114029891, guid: 50219b812079fd84c9c10e0b19804f1e, type: 3}
