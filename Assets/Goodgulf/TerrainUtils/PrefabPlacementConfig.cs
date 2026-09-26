@@ -125,7 +125,7 @@ namespace Goodgulf.TerrainUtils
             {
                 if (rule.prefab != null)
                 {
-                    hash = hash * 31 + rule.prefab.name.GetHashCode();
+                    hash = hash * 31 + StableHash.Fnv1a(rule.prefab.name);
                     hash = hash * 31 + rule.density.GetHashCode();
                     hash = hash * 31 + rule.terrainModificationRadius.GetHashCode();
                     hash = hash * 31 + (int)rule.modificationType;

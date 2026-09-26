@@ -123,10 +123,7 @@ namespace Goodgulf.TerrainUtils
         {
             if (string.IsNullOrEmpty(_cachePath))
             {
-                _cachePath = System.IO.Path.Combine(
-                    Application.persistentDataPath,
-                    CACHE_FOLDER_NAME
-                );
+                _cachePath = Goodgulf.Networking.PlayModeInstance.GetInstanceDataPath(CACHE_FOLDER_NAME);
                 
                 if (!System.IO.Directory.Exists(_cachePath))
                 {

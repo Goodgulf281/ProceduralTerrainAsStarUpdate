@@ -35,15 +35,22 @@ namespace Goodgulf.TerrainUtils
         // Placed prefab data
         public List<PlacedPrefabData> placedPrefabs = new List<PlacedPrefabData>();
         
+        // Current cache format version.
+        // v2: placement seeds and prefab IDs use StableHash instead of
+        //     GetInstanceID()/string.GetHashCode(), so v1 caches are stale.
+        public const int CurrentCacheVersion = 2;
+
         // Version for cache format changes
-        public int cacheVersion = 1;
-        
+        public int cacheVersion = CurrentCacheVersion;
+
         /// <summary>
         /// Check if this cache is valid for the given seed and config.
         /// </summary>
         public bool IsValid(int currentSeed, int currentConfigHash)
         {
-            return seed == currentSeed && configHash == currentConfigHash;
+            return cacheVersion == CurrentCacheVersion &&
+                   seed == currentSeed &&
+                   configHash == currentConfigHash;
         }
     }
     
@@ -62,10 +69,7 @@ namespace Goodgulf.TerrainUtils
         {
             if (string.IsNullOrEmpty(_cachePath))
             {
-                _cachePath = System.IO.Path.Combine(
-                    Application.persistentDataPath,
-                    CACHE_FOLDER_NAME
-                );
+                _cachePath = Goodgulf.Networking.PlayModeInstance.GetInstanceDataPath(CACHE_FOLDER_NAME);
                 
                 if (!System.IO.Directory.Exists(_cachePath))
                 {
