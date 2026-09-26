@@ -55,7 +55,7 @@ namespace Goodgulf.TerrainUtils
             {
                 if (rule.prefab != null)
                 {
-                    int prefabId = rule.prefab.name.GetHashCode();
+                    int prefabId = StableHash.Fnv1a(rule.prefab.name);
                     if (!prefabRegistry.ContainsKey(prefabId))
                     {
                         prefabRegistry[prefabId] = rule.prefab;
@@ -193,7 +193,7 @@ namespace Goodgulf.TerrainUtils
             ChunkPrefabCache cache = null)
         {
             // Create deterministic seed for this rule and chunk
-            int ruleSeed = GetDeterministicSeed(chunkCoord.x, chunkCoord.y, rule.prefab.GetInstanceID());
+            int ruleSeed = GetDeterministicSeed(chunkCoord.x, chunkCoord.y, StableHash.Fnv1a(rule.prefab.name));
             System.Random random = new System.Random(ruleSeed);
             
             // Calculate number of placement attempts based on density and chunk size
@@ -207,7 +207,7 @@ namespace Goodgulf.TerrainUtils
             List<Vector3> placedPositions = new List<Vector3>();
             
             // Prefab ID for caching
-            int prefabId = rule.prefab.name.GetHashCode();
+            int prefabId = StableHash.Fnv1a(rule.prefab.name);
             
             for (int i = 0; i < placementAttempts; i++)
             {
